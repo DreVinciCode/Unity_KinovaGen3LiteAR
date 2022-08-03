@@ -638,7 +638,8 @@ PlayerSettings:
       SpatialPerception: True
       InternetClient: True
       Microphone: True
-  metroTargetDeviceFamilies: {}
+  metroTargetDeviceFamilies:
+    Holographic: True
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
