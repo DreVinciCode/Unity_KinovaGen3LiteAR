@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robot name="GEN3_URDF_V12">
+  <material name="rgba-0.75294-0.75294-0.75294-1">
+    <color rgba="0.7529 0.7529 0.7529 1" />
+  </material>
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.000648 -0.000166 0.084487" />
+      <mass value="1.6970000267" />
+      <inertia ixx="0.00462200026959181" ixy="8.99992119229864E-06" ixz="6.00000166741665E-05" iyy="0.00449500139802694" iyz="8.99939459486632E-06" izz="0.00207899999804795" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/base_link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/base_link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Shoulder_Link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-2.3E-05 -0.010364 -0.07336" />
+      <mass value="1.377300024" />
+      <inertia ixx="0.0045700017362833" ixy="9.9923920515721E-07" ixz="1.99943156076188E-06" iyy="0.00483100209385157" iyz="0.00044800026807934" izz="0.00140900048427284" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/shoulder_link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/shoulder_link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="HalfArm1_Link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-4.4E-05 -0.09958 -0.013278" />
+      <mass value="1.163599968" />
+      <inertia ixx="0.0110880080610514" ixy="5.00002352055162E-06" ixz="1.80874683720217E-12" iyy="0.0010719996644184" iyz="-0.000690999382641166" izz="0.0112549914047122" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/HalfArm1_Link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/HalfArm1_Link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="HalfArm2_Link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-4.4E-05 -0.006641 -0.117892" />
+      <mass value="1.163599968" />
+      <inertia ixx="0.0109320068731904" ixy="6.27957907894938E-10" ixz="-6.99966903994209E-06" iyy="0.0111269941553473" iyz="0.000605999608524144" izz="0.00104299990925938" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/HalfArm2_Link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/HalfArm2_Link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ForeArm_Link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.8E-05 -0.075478 -0.015006" />
+      <mass value="0.9301999807" />
+      <inertia ixx="0.00814700219780207" ixy="-9.99997951112164E-07" ixz="-5.79865211403074E-10" iyy="0.000631000672001392" iyz="-0.000500000198371708" izz="0.00831600185483694" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/forearm_link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/forearm_link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="SphericalWrist1_Link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="1E-06 -0.009432 -0.063883" />
+      <mass value="0.6780999899" />
+      <inertia ixx="0.00159600062761456" ixy="-2.36428598920924E-10" ixz="-2.80131445817844E-10" iyy="0.00160700047854334" iyz="0.000256000057561323" izz="0.000399000069592148" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/SphericalWrist1_Link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/SphericalWrist1_Link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="SphericalWrist2_Link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="1E-06 -0.045483 -0.00965" />
+      <mass value="0.6780999899" />
+      <inertia ixx="0.00164099934045225" ixy="1.15896062278381E-12" ixz="-1.06926793808082E-11" iyy="0.000410000153351575" iyz="-0.000278000195976347" izz="0.00164100108668208" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/SphericalWrist2_Link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/SphericalWrist2_Link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Bracelet_Link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.000281 -0.011402 -0.029798" />
+      <mass value="0.5005999804" />
+      <inertia ixx="0.00058700010413304" ixy="3.00000124298094E-06" ixz="2.99996600006125E-06" iyy="0.00036900004488416" iyz="0.000118000032671262" izz="0.000608999980613589" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/Bracelet_Link.STL" scale="1 1 1" />
+      </geometry>
+      <material name="rgba-0.75294-0.75294-0.75294-1">
+        <color rgba="0.7529 0.7529 0.7529 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/Bracelet_Link.STL" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="EndEffector_Link" />
+  <joint name="GEN3_URDF_V12_base_link_joint" type="fixed">
+    <parent link="GEN3_URDF_V12" />
+    <child link="base_link" />
+  </joint>
+  <joint name="Actuator1" type="continuous">
+    <origin rpy="-3.141585 0 0" xyz="0 0 0.15643" />
+    <parent link="base_link" />
+    <child link="Shoulder_Link" />
+  </joint>
+  <joint name="Actuator2" type="revolute">
+    <origin rpy="-4.712385 0 0" xyz="0 0.005375 -0.12838" />
+    <parent link="Shoulder_Link" />
+    <child link="HalfArm1_Link" />
+    <limit lower="-2.40999991292313" upper="2.40999991292313" effort="39" velocity="7" />
+  </joint>
+  <joint name="Actuator3" type="continuous">
+    <origin rpy="-1.5708 0 0" xyz="0 -0.21038 -0.006375" />
+    <parent link="HalfArm1_Link" />
+    <child link="HalfArm2_Link" />
+  </joint>
+  <joint name="Actuator4" type="revolute">
+    <origin rpy="-4.712385 0 0" xyz="0 0.006375 -0.21038" />
+    <parent link="HalfArm2_Link" />
+    <child link="ForeArm_Link" />
+    <limit lower="-2.65999989725998" upper="2.65999989725998" effort="39" velocity="7" />
+  </joint>
+  <joint name="Actuator5" type="continuous">
+    <origin rpy="-1.5708 0 0" xyz="0 -0.20843 -0.006375" />
+    <parent link="ForeArm_Link" />
+    <child link="SphericalWrist1_Link" />
+  </joint>
+  <joint name="Actuator6" type="revolute">
+    <origin rpy="-4.712385 0 0" xyz="0 0.000175 -0.10593" />
+    <parent link="SphericalWrist1_Link" />
+    <child link="SphericalWrist2_Link" />
+    <limit lower="-2.23000005203232" upper="2.23000005203232" effort="9" velocity="7" />
+  </joint>
+  <joint name="Actuator7" type="continuous">
+    <origin rpy="-1.5708 0 0" xyz="0 -0.10593 -0.000175" />
+    <parent link="SphericalWrist2_Link" />
+    <child link="Bracelet_Link" />
+  </joint>
+  <joint name="EndEffector" type="fixed">
+    <origin rpy="-3.141593 0 0" xyz="0 0 -0.061525" />
+    <parent link="Bracelet_Link" />
+    <child link="EndEffector_Link" />
+  </joint>
+</robot>
