@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.ptc.vuforia.engine": {
+      "version": "file:com.ptc.vuforia.engine-10.8.4.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      }
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.13",
       "depth": 0,

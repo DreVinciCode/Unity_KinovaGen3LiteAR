@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VuforiaUnityInfo version="7.0">
+    <TargetSet version="5.0" toolVersion="2.8.0">
+        <CylinderTarget name="kinova_gen3_lite" version="3.0" targetId="1ffbc2a3019141c6b7ac2154fe0d32ca" sideLength="0.050000" topDiameter="0.080000" bottomDiameter="0.080000" sideImage="kinova_gen3_lite.Body_scaled.jpg"/>
+    </TargetSet>
+</VuforiaUnityInfo>
