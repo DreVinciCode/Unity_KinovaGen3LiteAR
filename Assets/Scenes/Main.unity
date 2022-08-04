@@ -140,8 +140,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 684439913}
     - target: {fileID: 347693740979163244, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 684439914}
+    - target: {fileID: 347693740979163244, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1552439521}
+    - target: {fileID: 347693740979163244, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 347693740979163244, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: AddDigitSequence
+      objectReference: {fileID: 0}
+    - target: {fileID: 347693740979163244, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: set_ConnectionCheck
       objectReference: {fileID: 0}
     - target: {fileID: 1388679537147562260, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
       propertyPath: m_Sprite
@@ -162,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 7661553310284111046, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
       propertyPath: m_Name
       value: HandMenu_Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661553310284111046, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7661553310284111047, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
       propertyPath: m_RootOrder
@@ -267,6 +287,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 370160063}
     m_Modifications:
+    - target: {fileID: 42371664650036871, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27
+      objectReference: {fileID: 0}
     - target: {fileID: 2269032198183835089, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -286,6 +310,10 @@ PrefabInstance:
     - target: {fileID: 2269032198183835089, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: RemoveDigitSequence
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433032053156198339, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+      propertyPath: m_text
+      value: 192.168.0.27
       objectReference: {fileID: 0}
     - target: {fileID: 9023940030506582825, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: m_Name
@@ -346,6 +374,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9023940030506582826, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
   m_PrefabInstance: {fileID: 684439909}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &684439912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4433032053156198339, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+  m_PrefabInstance: {fileID: 684439909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &684439913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9023940030506582825, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
@@ -657,6 +696,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mWorldCenterMode: 2
   mWorldCenter: {fileID: 0}
+--- !u!1 &1326970846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4224314501560097846, guid: 5309118417c154a46abe12910f748232, type: 3}
+  m_PrefabInstance: {fileID: 2103275748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1552439518
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abd13dc9dc62104da6377352591d098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IPText: {fileID: 0}
+  IPText: {fileID: 684439912}
   RosConnectionEstablished:
     m_PersistentCalls:
       m_Calls:
@@ -947,8 +991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainHandMenu: {fileID: 7661553310284111046, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
-  UR5HandMenu: {fileID: 0}
-  AR_NumMenu: {fileID: 0}
+  UR5HandMenu: {fileID: 1326970846}
+  AR_NumMenu: {fileID: 684439913}
 --- !u!114 &1760287278
 MonoBehaviour:
   m_ObjectHideFlags: 0
