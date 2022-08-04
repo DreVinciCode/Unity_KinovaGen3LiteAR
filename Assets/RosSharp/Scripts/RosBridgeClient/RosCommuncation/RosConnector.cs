@@ -26,6 +26,9 @@ namespace RosSharp.RosBridgeClient
     {
         public int SecondsTimeout = 10;
 
+        public bool ConnectionStatus { get; set; }
+
+
         public RosSocket RosSocket { get; private set; }
         public RosSocket.SerializerEnum Serializer;
         public Protocol protocol;
@@ -34,6 +37,16 @@ namespace RosSharp.RosBridgeClient
         public ManualResetEvent IsConnected { get; private set; }
 
         public virtual void Awake()
+        {
+
+        }
+
+        private void Start()
+        {
+            ConnectionStatus = false;
+        }
+
+        public void RosConnect()
         {
 #if WINDOWS_UWP
             // overwrite selection
@@ -51,8 +64,16 @@ namespace RosSharp.RosBridgeClient
         {
             RosSocket = ConnectToRos(protocol, RosBridgeServerUrl, OnConnected, OnClosed, Serializer);
 
-            if (!IsConnected.WaitOne(SecondsTimeout * 1000))
+            if (!IsConnected.WaitOne(SecondsTimeout * 100))
+            {
+                ConnectionStatus = false;
                 Debug.LogWarning("Failed to connect to RosBridge at: " + RosBridgeServerUrl);
+            }
+            else
+            {
+                //call the UI Button somehow, I tried using UnityEvents but I get errors about running in main thread.
+                ConnectionStatus = true;
+            }
         }
 
         public static RosSocket ConnectToRos(Protocol protocolType, string serverUrl, EventHandler onConnected = null, EventHandler onClosed = null, RosSocket.SerializerEnum serializer = RosSocket.SerializerEnum.Microsoft)

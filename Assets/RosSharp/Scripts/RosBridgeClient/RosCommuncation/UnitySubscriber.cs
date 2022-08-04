@@ -26,20 +26,49 @@ namespace RosSharp.RosBridgeClient
 
         private RosConnector rosConnector;
         private readonly int SecondsTimeout = 1;
+        private string _topicID;
+
 
         protected virtual void Start()
         {
             rosConnector = GetComponent<RosConnector>();
-            new Thread(Subscribe).Start();
+            //new Thread(Subscribe).Start();
+        }
+
+        public void SubscribeStatus()
+        {
+            if (isActiveAndEnabled)
+            {
+                new Thread(Subscribe).Start();
+            }
+            else
+            {
+                UnSubscribe();
+            }
         }
 
         private void Subscribe()
         {
+            try
+            {
+                if (!rosConnector.IsConnected.WaitOne(SecondsTimeout * 100))
+                    Debug.LogWarning("Failed to subscribe: RosConnector not connected");
 
-            if (!rosConnector.IsConnected.WaitOne(SecondsTimeout * 1000))
-                Debug.LogWarning("Failed to subscribe: RosConnector not connected");
+                _topicID = rosConnector.RosSocket.Subscribe<T>(Topic, ReceiveMessage, (int)(TimeStep * 1000)); // the rate(in ms in between messages) at which to throttle the topics          
 
-            rosConnector.RosSocket.Subscribe<T>(Topic, ReceiveMessage, (int)(TimeStep * 1000)); // the rate(in ms in between messages) at which to throttle the topics
+            }
+            catch
+            {
+                Subscribe();
+            }
+
+
+            rosConnector.RosSocket.Subscribe<T>(Topic, ReceiveMessage, (int)(TimeStep * 100)); // the rate(in ms in between messages) at which to throttle the topics
+        }
+
+        private void UnSubscribe()
+        {
+            rosConnector.RosSocket.Unsubscribe(_topicID);
         }
 
         protected abstract void ReceiveMessage(T message);
