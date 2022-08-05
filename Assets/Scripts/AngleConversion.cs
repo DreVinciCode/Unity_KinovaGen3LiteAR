@@ -31,15 +31,33 @@ namespace RosSharp.RosBridgeClient
         private float _right_Wrist_3_Offset_Position = -(float)Math.PI/4;
 
 
+        private Vector3 InitialJoint_1;
+        private Vector3 InitialJoint_2;
+        private Vector3 InitialJoint_3;
+        private Vector3 InitialJoint_4;
+        private Vector3 InitialJoint_5;
+        private Vector3 InitialJoint_6;
+
+
+
+        private void Start()
+        {
+            InitialJoint_1 = Left_Shoulder_Pan.localEulerAngles;
+            InitialJoint_2 = Left_Shoulder_Lift.localEulerAngles;
+            InitialJoint_3 = Left_Elbow.localEulerAngles;
+            InitialJoint_4 = Left_Wrist_1.localEulerAngles;
+            InitialJoint_5 = Left_Wrist_2.localEulerAngles;
+            InitialJoint_6 = Left_Wrist_3.localEulerAngles;
+        }
+
         private void Update()
         {
-  
-            Left_Shoulder_Pan.localEulerAngles = UpdateArmOrientation(-1 * Vector3.up, Left_Shoulder_Pan_position);
-            Left_Shoulder_Lift.localEulerAngles = UpdateArmOrientation(Vector3.forward, Left_Shoulder_Lift_position);
-            Left_Elbow.localEulerAngles = UpdateArmOrientation(-1 * Vector3.up, Left_Elbow_position);
-            Left_Wrist_1.localEulerAngles = UpdateArmOrientation(-1 * Vector3.up, Left_Wrist_1_position);
-            Left_Wrist_2.localEulerAngles = UpdateArmOrientation(-1 * Vector3.forward, Left_Wrist_2_position);
-            Left_Wrist_3.localEulerAngles = UpdateArmOrientation(Vector3.up, Left_Wrist_3_position);
+            Left_Shoulder_Pan.localEulerAngles = InitialJoint_1 + UpdateArmOrientation(-1 * Vector3.up, Left_Shoulder_Pan_position);
+            Left_Shoulder_Lift.localEulerAngles = InitialJoint_2 + UpdateArmOrientation(Vector3.right, Left_Shoulder_Lift_position);
+            Left_Elbow.localEulerAngles = InitialJoint_3 + UpdateArmOrientation(-1 * Vector3.up, Left_Elbow_position);
+            Left_Wrist_1.localEulerAngles = InitialJoint_4 + UpdateArmOrientation(-1 * Vector3.right, Left_Wrist_1_position);
+            Left_Wrist_2.localEulerAngles = InitialJoint_5 +  UpdateArmOrientation(Vector3.forward, Left_Wrist_2_position);
+            Left_Wrist_3.localEulerAngles = InitialJoint_6 +  UpdateArmOrientation(Vector3.forward, Left_Wrist_3_position);
         }
 
         private float RadianToDegree(float position)
@@ -58,6 +76,6 @@ namespace RosSharp.RosBridgeClient
             else
                 return axis * position * (180.0f / (float)Math.PI);
 
-        }
+        }      
     }
 }
