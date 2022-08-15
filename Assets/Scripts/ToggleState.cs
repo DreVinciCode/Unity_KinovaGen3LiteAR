@@ -1,20 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ToggleState : MonoBehaviour
 {
+    [System.Serializable]
+    public class ToggleButtonClickCallBack : UnityEvent<bool> { };
+
+    public ToggleButtonClickCallBack OnToggle = new ToggleButtonClickCallBack();
+
     private bool _state = false;
 
-    public GameObject[] GameObjects;
-
-    public void ToggleButton()
+    public void CallOnToggle()
     {
         _state = !_state;
-        foreach (var item in GameObjects)
-        {
-            item.SetActive(_state);
-        }
+        OnToggle.Invoke(_state);
     }
 }
