@@ -19,6 +19,8 @@ namespace RosSharp.RosBridgeClient
         public Transform Joint_4;
         public Transform Joint_5;
         public Transform Joint_6;
+        public Transform Right_Bottom_Finger;
+        public Transform Left_Bottom_Finger;
 
         private Vector3 InitialJoint_1;
         private Vector3 InitialJoint_2;
@@ -26,13 +28,10 @@ namespace RosSharp.RosBridgeClient
         private Vector3 InitialJoint_4;
         private Vector3 InitialJoint_5;
         private Vector3 InitialJoint_6;
+        private Vector3 Initial_Right_Finger_Bottom;
+        private Vector3 Initial_Left_Finger_Bottom;
 
-        /*
-        public Transform right_finger_buttom_joint;
-        public Transform right_finger_tip_joint;
-        public Transform left_finger_buttom_joint;
-        public Transform left_finger_tip_joint;
-        */
+
 
         public float Joint_1_Offset_Position;
         public float Joint_2_Offset_Position = (float)Math.PI;
@@ -40,6 +39,8 @@ namespace RosSharp.RosBridgeClient
         public float Joint_4_Offset_Position;
         public float Joint_5_Offset_Position = (float)Math.PI; 
         public float Joint_6_Offset_Position;
+        public float Right_Bottom_Finger_Offset_Position;
+        public float Left_Bottom_Finger_Offset_Position;
 
         Dictionary<string, Transform> JointName_Dictionary = new Dictionary<string, Transform>();
         Dictionary<string, Vector3> JointAxis_Dictionary = new Dictionary<string, Vector3>();
@@ -54,6 +55,8 @@ namespace RosSharp.RosBridgeClient
             InitialJoint_4 = Joint_4.localEulerAngles;
             InitialJoint_5 = Joint_5.localEulerAngles;
             InitialJoint_6 = Joint_6.localEulerAngles;
+            Initial_Right_Finger_Bottom = Right_Bottom_Finger.localEulerAngles;
+            Initial_Left_Finger_Bottom = Left_Bottom_Finger.localEulerAngles;
 
             JointName_Dictionary.Add("joint_1", Joint_1);
             JointName_Dictionary.Add("joint_2", Joint_2);
@@ -61,6 +64,8 @@ namespace RosSharp.RosBridgeClient
             JointName_Dictionary.Add("joint_4", Joint_4);
             JointName_Dictionary.Add("joint_5", Joint_5);
             JointName_Dictionary.Add("joint_6", Joint_6);
+            JointName_Dictionary.Add("left_finger_bottom_joint", Left_Bottom_Finger);
+            JointName_Dictionary.Add("right_finger_bottom_joint", Right_Bottom_Finger);
 
             JointAxis_Dictionary.Add("joint_1", Vector3.up);
             JointAxis_Dictionary.Add("joint_2", Vector3.right);
@@ -68,6 +73,8 @@ namespace RosSharp.RosBridgeClient
             JointAxis_Dictionary.Add("joint_4", Vector3.right);
             JointAxis_Dictionary.Add("joint_5", Vector3.forward);
             JointAxis_Dictionary.Add("joint_6", -1*  Vector3.forward);
+            JointAxis_Dictionary.Add("left_finger_bottom_joint", Vector3.right);
+            JointAxis_Dictionary.Add("right_finger_bottom_joint", Vector3.right);
 
             JointOffset_Dictionary.Add("joint_1", Joint_1_Offset_Position);
             JointOffset_Dictionary.Add("joint_2", Joint_2_Offset_Position);
@@ -75,6 +82,9 @@ namespace RosSharp.RosBridgeClient
             JointOffset_Dictionary.Add("joint_4", Joint_4_Offset_Position);
             JointOffset_Dictionary.Add("joint_5", Joint_5_Offset_Position);
             JointOffset_Dictionary.Add("joint_6", Joint_6_Offset_Position);
+            JointOffset_Dictionary.Add("left_finger_bottom_joint", Right_Bottom_Finger_Offset_Position);
+            JointOffset_Dictionary.Add("right_finger_bottom_joint", Left_Bottom_Finger_Offset_Position);
+
 
             JointInitialRotation_Dictiontary.Add("joint_1", InitialJoint_1);
             JointInitialRotation_Dictiontary.Add("joint_2", InitialJoint_2);
@@ -82,7 +92,8 @@ namespace RosSharp.RosBridgeClient
             JointInitialRotation_Dictiontary.Add("joint_4", InitialJoint_4);
             JointInitialRotation_Dictiontary.Add("joint_5", InitialJoint_5);
             JointInitialRotation_Dictiontary.Add("joint_6", InitialJoint_6);
-
+            JointInitialRotation_Dictiontary.Add("left_finger_bottom_joint", Initial_Left_Finger_Bottom);
+            JointInitialRotation_Dictiontary.Add("right_finger_bottom_joint", Initial_Right_Finger_Bottom);
         }
 
         private void Update()

@@ -12,7 +12,10 @@ namespace RosSharp.RosBridgeClient
         public Transform Left_Wrist_2;
         public Transform Left_Wrist_3;
 
-
+        public Transform Right_Bottom_Finger;
+        public Transform Right_Tip_Finger;
+        public Transform Left_Bottom_Finger;
+        public Transform Left_Tip_Finger;
 
         [Range(-6.28f, 6.28f)] public float Left_Shoulder_Pan_position;
         [Range(-6.28f, 6.28f)] public float Left_Shoulder_Lift_position;
@@ -20,6 +23,12 @@ namespace RosSharp.RosBridgeClient
         [Range(-6.28f, 6.28f)] public float Left_Wrist_1_position;
         [Range(-6.28f, 6.28f)] public float Left_Wrist_2_position;
         [Range(-6.28f, 6.28f)] public float Left_Wrist_3_position;
+
+
+        [Range(-0.0872665f, 0.96f)] public float Right_Bottom_Finger_position = -0.872665f;
+        [Range(-0.506f, 0.21f)] public float Right_Tip_Finger_position;
+
+
 
 
         //Setting Offset value for joint values 
@@ -38,6 +47,10 @@ namespace RosSharp.RosBridgeClient
         private Vector3 InitialJoint_5;
         private Vector3 InitialJoint_6;
 
+        private Vector3 Initial_Right_Finger_Bottom;
+        private Vector3 Initial_Right_Finger_Tip;
+
+        private Vector3 Initial_Left_Finger_Bottom;
 
 
         private void Start()
@@ -48,6 +61,12 @@ namespace RosSharp.RosBridgeClient
             InitialJoint_4 = Left_Wrist_1.localEulerAngles;
             InitialJoint_5 = Left_Wrist_2.localEulerAngles;
             InitialJoint_6 = Left_Wrist_3.localEulerAngles;
+
+            Initial_Right_Finger_Bottom = Right_Bottom_Finger.localEulerAngles;
+            //Initial_Right_Finger_Tip = Right_Tip_Finger.localEulerAngles;
+
+            Initial_Left_Finger_Bottom = Left_Bottom_Finger.localEulerAngles;
+
         }
 
         private void Update()
@@ -58,6 +77,10 @@ namespace RosSharp.RosBridgeClient
             Left_Wrist_1.localEulerAngles = InitialJoint_4 + UpdateArmOrientation(-1 * Vector3.right, Left_Wrist_1_position);
             Left_Wrist_2.localEulerAngles = InitialJoint_5 +  UpdateArmOrientation(Vector3.forward, Left_Wrist_2_position);
             Left_Wrist_3.localEulerAngles = InitialJoint_6 +  UpdateArmOrientation(Vector3.forward, Left_Wrist_3_position);
+
+            Right_Bottom_Finger.localEulerAngles = Initial_Right_Finger_Bottom + UpdateArmOrientation(-1* Vector3.right, Right_Bottom_Finger_position);
+            Left_Bottom_Finger.localEulerAngles = Initial_Left_Finger_Bottom + UpdateArmOrientation(Vector3.right, Right_Bottom_Finger_position);
+        
         }
 
         private float RadianToDegree(float position)
