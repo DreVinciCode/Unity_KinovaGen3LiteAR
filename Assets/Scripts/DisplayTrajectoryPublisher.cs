@@ -23,39 +23,63 @@ namespace RosSharp.RosBridgeClient
         public Transform Wrist_2;
         public Transform Wrist_3;
 
-        public float Shoulder_Pan_Offset_Position = (float)Math.PI;
-        public float Shoulder_Lift_Offset_Position = (float)Math.PI / 2;
-        public float Elbow_Offset_Position = 0.0f;
-        public float Wrist_1_Offset_Position = (float)Math.PI / 2;
-        public float Wrist_2_Offset_Position = 0.0f;
-        public float Wrist_3_Offset_Position = -(float)Math.PI / 4;
+        private Vector3 InitialJoint_1;
+        private Vector3 InitialJoint_2;
+        private Vector3 InitialJoint_3;
+        private Vector3 InitialJoint_4;
+        private Vector3 InitialJoint_5;
+        private Vector3 InitialJoint_6;
+
+        public float Shoulder_Pan_Offset_Position = 0; //(float)Math.PI;
+        public float Shoulder_Lift_Offset_Position = 0; // (float)Math.PI / 2;
+        public float Elbow_Offset_Position = 0;
+        public float Wrist_1_Offset_Position = 0; // (float)Math.PI / 2;
+        public float Wrist_2_Offset_Position = 0;
+        public float Wrist_3_Offset_Position = 0; //-(float)Math.PI / 4;
 
         Dictionary<string, Transform> JointName_Dictionary = new Dictionary<string, Transform>();
         Dictionary<string, Vector3> JointAxis_Dictionary = new Dictionary<string, Vector3>();
         Dictionary<string, float> JointOffset_Dictionary = new Dictionary<string, float>();
+        Dictionary<string, Vector3> JointInitialRotation_Dictiontary = new Dictionary<string, Vector3>();
+
 
         private void Start()
         {
-            JointName_Dictionary.Add(prefix + "shoulder_pan_joint", Shoulder_Pan);
-            JointName_Dictionary.Add(prefix + "shoulder_lift_joint", Shoulder_Lift);
-            JointName_Dictionary.Add(prefix + "elbow_joint", Elbow);
-            JointName_Dictionary.Add(prefix + "wrist_1_joint", Wrist_1);
-            JointName_Dictionary.Add(prefix + "wrist_2_joint", Wrist_2);
-            JointName_Dictionary.Add(prefix + "wrist_3_joint", Wrist_3);
+            InitialJoint_1 = Shoulder_Pan.localEulerAngles;
+            InitialJoint_2 = Shoulder_Lift.localEulerAngles;
+            InitialJoint_3 = Elbow.localEulerAngles;
+            InitialJoint_4 = Wrist_1.localEulerAngles;
+            InitialJoint_5 = Wrist_2.localEulerAngles;
+            InitialJoint_6 = Wrist_3.localEulerAngles;
 
-            JointAxis_Dictionary.Add(prefix + "shoulder_pan_joint", Vector3.forward);
-            JointAxis_Dictionary.Add(prefix + "shoulder_lift_joint", Vector3.up);
-            JointAxis_Dictionary.Add(prefix + "elbow_joint", Vector3.up);
-            JointAxis_Dictionary.Add(prefix + "wrist_1_joint", Vector3.up);
-            JointAxis_Dictionary.Add(prefix + "wrist_2_joint", Vector3.forward);
-            JointAxis_Dictionary.Add(prefix + "wrist_3_joint", Vector3.up);
+            JointName_Dictionary.Add(prefix + "joint_1", Shoulder_Pan);
+            JointName_Dictionary.Add(prefix + "joint_2", Shoulder_Lift);
+            JointName_Dictionary.Add(prefix + "joint_3", Elbow);
+            JointName_Dictionary.Add(prefix + "joint_4", Wrist_1);
+            JointName_Dictionary.Add(prefix + "joint_5", Wrist_2);
+            JointName_Dictionary.Add(prefix + "joint_6", Wrist_3);
 
-            JointOffset_Dictionary.Add(prefix + "shoulder_pan_joint", Shoulder_Pan_Offset_Position);
-            JointOffset_Dictionary.Add(prefix + "shoulder_lift_joint", Shoulder_Lift_Offset_Position);
-            JointOffset_Dictionary.Add(prefix + "elbow_joint", Elbow_Offset_Position);
-            JointOffset_Dictionary.Add(prefix + "wrist_1_joint", Wrist_1_Offset_Position);
-            JointOffset_Dictionary.Add(prefix + "wrist_2_joint", Wrist_2_Offset_Position);
-            JointOffset_Dictionary.Add(prefix + "wrist_3_joint", Wrist_3_Offset_Position);
+            JointAxis_Dictionary.Add(prefix + "joint_1", Vector3.up);
+            JointAxis_Dictionary.Add(prefix + "joint_2", Vector3.right);
+            JointAxis_Dictionary.Add(prefix + "joint_3", -1 * Vector3.up);
+            JointAxis_Dictionary.Add(prefix + "joint_4", Vector3.right);
+            JointAxis_Dictionary.Add(prefix + "joint_5", Vector3.forward);
+            JointAxis_Dictionary.Add(prefix + "joint_6", -1 * Vector3.forward);
+
+            JointOffset_Dictionary.Add(prefix + "joint_1", Shoulder_Pan_Offset_Position);
+            JointOffset_Dictionary.Add(prefix + "joint_2", Shoulder_Lift_Offset_Position);
+            JointOffset_Dictionary.Add(prefix + "joint_3", Elbow_Offset_Position);
+            JointOffset_Dictionary.Add(prefix + "joint_4", Wrist_1_Offset_Position);
+            JointOffset_Dictionary.Add(prefix + "joint_5", Wrist_2_Offset_Position);
+            JointOffset_Dictionary.Add(prefix + "joint_6", Wrist_3_Offset_Position);
+
+            JointInitialRotation_Dictiontary.Add("joint_1", InitialJoint_1);
+            JointInitialRotation_Dictiontary.Add("joint_2", InitialJoint_2);
+            JointInitialRotation_Dictiontary.Add("joint_3", InitialJoint_3);
+            JointInitialRotation_Dictiontary.Add("joint_4", InitialJoint_4);
+            JointInitialRotation_Dictiontary.Add("joint_5", InitialJoint_5);
+            JointInitialRotation_Dictiontary.Add("joint_6", InitialJoint_6);
+
         }
 
         private void Update()
@@ -89,7 +113,7 @@ namespace RosSharp.RosBridgeClient
             for (int k = 0; k < _jointNames.Length; k++)
             {
                 var arm_transform = JointName_Dictionary[_jointNames[k]];
-                arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[k]], -1 * (float)_trajectory[0].joint_trajectory.points[_currentPointPosition].positions[k] + JointOffset_Dictionary[_jointNames[k]]);
+                arm_transform.localEulerAngles = JointInitialRotation_Dictiontary[_jointNames[k]] + UpdateArmOrientation(JointAxis_Dictionary[_jointNames[k]], -1 * (float)_trajectory[0].joint_trajectory.points[_currentPointPosition].positions[k] + JointOffset_Dictionary[_jointNames[k]]);
             }
         }
 

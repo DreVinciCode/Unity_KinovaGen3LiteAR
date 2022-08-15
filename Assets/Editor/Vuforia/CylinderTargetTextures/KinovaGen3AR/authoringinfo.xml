@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VuforiaUnityInfo version="7.0">
     <TargetSet version="5.0" toolVersion="2.8.0">
+        <CylinderTarget name="kinova_hand" version="3.0" targetId="1b941ecdc02d4608be4f2eb1bb556e29" sideLength="0.030000" topDiameter="0.066000" bottomDiameter="0.066000" sideImage="kinova_hand.Body_scaled.jpg"/>
         <CylinderTarget name="gen3_lite_large" version="3.0" targetId="f052b2c00a0e425db512a6288269b99a" sideLength="0.150000" topDiameter="0.080500" bottomDiameter="0.080500" sideImage="gen3_lite_large.Body_scaled.jpg"/>
         <CylinderTarget name="kinova_gen3_lite" version="3.0" targetId="1ffbc2a3019141c6b7ac2154fe0d32ca" sideLength="0.050000" topDiameter="0.080000" bottomDiameter="0.080000" sideImage="kinova_gen3_lite.Body_scaled.jpg"/>
     </TargetSet>
