@@ -2074,6 +2074,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6561746351022304787, guid: ad754e26f239f00459530909daf477a8, type: 3}
   m_PrefabInstance: {fileID: 1509883133}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &775839515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+  m_PrefabInstance: {fileID: 1509883133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0f1b284f3039840a3ecd0f939094b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &785513831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2235,7 +2246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 7e7c962b9eb9dfa44993d5b2f2576752, type: 2}
+  activeProfile: {fileID: 11400000, guid: 22c4382820dfbad48be059c1a805c1ad, type: 2}
 --- !u!4 &848280881
 Transform:
   m_ObjectHideFlags: 0
@@ -3601,10 +3612,18 @@ PrefabInstance:
       objectReference: {fileID: 6993960255619728991}
     - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
       propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
       propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
@@ -3612,7 +3631,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6993960255619728991}
     - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1552439524}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1552439524}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
       propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
@@ -3620,11 +3655,35 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set__publishMessageCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
       propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: RosSharp.RosBridgeClient.TwistCommandPublisher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
       propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895513043134013362, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnToggle.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3934532412675429318, guid: ad754e26f239f00459530909daf477a8, type: 3}
@@ -3674,6 +3733,58 @@ PrefabInstance:
     - target: {fileID: 4295881385193595501, guid: ad754e26f239f00459530909daf477a8, type: 3}
       propertyPath: m_Name
       value: CurrentArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 775839515}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1552439524}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallOnToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set__publishMessageCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToggleState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RosSharp.RosBridgeClient.TwistCommandPublisher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346827992101471825, guid: ad754e26f239f00459530909daf477a8, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4543010856474435254, guid: ad754e26f239f00459530909daf477a8, type: 3}
       propertyPath: m_IsActive
@@ -3807,6 +3918,8 @@ GameObject:
   - component: {fileID: 1552439522}
   - component: {fileID: 1552439523}
   - component: {fileID: 1552439524}
+  - component: {fileID: 1552439526}
+  - component: {fileID: 1552439525}
   m_Layer: 0
   m_Name: RosConnector
   m_TagString: Untagged
@@ -3922,6 +4035,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1552439526}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1552439525}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1552439524}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.TwistCommandPublisher,
+          Assembly-CSharp
+        m_MethodName: set__publishMessageCheck
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   RosConnectionFailed:
     m_PersistentCalls:
       m_Calls: []
@@ -3967,7 +4117,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b99f7cfb1e3d64dac9576444cab883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /my_gen3_lite/in/cartesian_velocity
+  Topic: /my_gen3_lite/in/cartesian_velocity_mod
+  LeftHandThumbMarker: {fileID: 8983524776494292824, guid: eb434a621e3c0e94bb71dfdd3806d2c5, type: 3}
+  LeftHandWristMarker: {fileID: 131965406776990004, guid: ad5f5e46104afa247a8aa45563c6eee0, type: 3}
+  LeftHandIndexMarker: {fileID: 2098532061995269956, guid: b0b875095297ea440bbc247557910b79, type: 3}
+  Status: {fileID: 1581143380265261354}
+  Direction: {fileID: 1844641656}
+  _StopEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1552439526}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.StopCommandPublisher,
+          Assembly-CSharp
+        m_MethodName: CallStop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _EmergencyStopEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1552439525}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.EmergencyStopCommandPublisher,
+          Assembly-CSharp
+        m_MethodName: CallEmergencyStop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1552439525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552439518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23df01b38d9da38499be339e1d29c65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /my_gen3_lite/in/emergency_stop
+--- !u!114 &1552439526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552439518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cd2583061549b4b82ecec2a1bf4c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /my_gen3_lite/in/stop
 --- !u!1 &1585000354
 GameObject:
   m_ObjectHideFlags: 0
