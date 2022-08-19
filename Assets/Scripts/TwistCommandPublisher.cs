@@ -19,7 +19,6 @@ namespace RosSharp.RosBridgeClient
 
         public bool _publishMessageCheck { get; set; }
 
-        //private MessageTypes.KortexDriver.TwistCommand message;
         private MessageTypes.Geometry.Twist message;
 
 
@@ -41,14 +40,12 @@ namespace RosSharp.RosBridgeClient
 
         private MixedRealityPose _leftThumbPose, _leftWristPose, _leftIndexPose, _leftMiddlePose;
 
-
         public UnityEvent _StopEvent;
         public UnityEvent _EmergencyStopEvent;
 
         GameObject _leftThumbObject;
         GameObject _leftWristObject;
         GameObject _leftIndexObject;
-
 
         protected override void Start()
         {
@@ -69,26 +66,11 @@ namespace RosSharp.RosBridgeClient
 
         private void InitializeMessage()
         {
-            // message = new MessageTypes.KortexDriver.TwistCommand();
-            //message.twist = new MessageTypes.KortexDriver.Twist();
-            //message = new MessageTypes.KortexDriver.Twist();
             message = new MessageTypes.Geometry.Twist();
-            //message.reference_frame = _referenceFrame;
-            //message.duration = _duration;
         }
 
         private void PublishMessage()
         {
-            /*
-            message.twist.linear_x = _linearX;
-            message.twist.linear_y = _linearY;
-            message.twist.linear_z = _linearZ;
-
-            message.twist.angular_x = 0f;
-            message.twist.angular_y = 0f;
-            message.twist.angular_z = 0f;
-            */
-
             Vector3 linearVelocity = new Vector3(_linearX, _linearY, _linearZ);
             Vector3 angularVelocity = new Vector3(0f, 0f, 0f);
 
