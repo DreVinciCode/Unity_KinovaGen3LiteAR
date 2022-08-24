@@ -76,7 +76,7 @@ namespace RosSharp.RosBridgeClient
 
         private IEnumerator WaitForSeconds()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1f);
             Publish(message);
             _publishedMessage = true;
         }

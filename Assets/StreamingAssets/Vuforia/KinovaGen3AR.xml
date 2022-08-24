@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <CylinderTarget name="kinova_medium" sideLength="0.060000"/>
     <CylinderTarget name="kinova_hand" sideLength="0.030000"/>
     <CylinderTarget name="gen3_lite_large" sideLength="0.150000"/>
     <CylinderTarget name="kinova_gen3_lite" sideLength="0.050000"/>
