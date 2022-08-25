@@ -1,7 +1,5 @@
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.Utilities;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -10,7 +8,7 @@ namespace RosSharp.RosBridgeClient
     public class HandMirrorPublisher : UnityPublisher<MessageTypes.Geometry.Twist>
     {
         public GameObject LeftHandIndexMarker;
-        public GameObject Target_EndEffector;
+        public GameObject Target_EndEffectorImage;
         public TMP_Text Status;
         public TMP_Text Direction;
 
@@ -23,6 +21,7 @@ namespace RosSharp.RosBridgeClient
         private float _linearZ = 0;
         private float _distanceThreshold = 0.01f;
         private float _forwardSeparation = 0.1f;
+        private float _vertialOffset = 0.1872f;
         private float left_thumbCurl;
         private float left_indexCurl;
         private float left_middleCurl;
@@ -45,7 +44,6 @@ namespace RosSharp.RosBridgeClient
             InitializeMessage();
             Status.text = "Inactive";
             _leftIndexObject = Instantiate(LeftHandIndexMarker, Camera.main.transform);
-
         }
 
         private void InitializeMessage()
@@ -114,14 +112,19 @@ namespace RosSharp.RosBridgeClient
             else if (HandJointUtils.TryGetJointPose(TrackedHandJoint.Palm, Handedness.Left, out _leftPalmPose) &&
                 HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Left, out _leftIndexPose))
             {
-                _leftIndexObject.transform.position = _leftIndexPose.Position + _indexOffset;
-                //_leftIndexObject.GetComponent<Renderer>().enabled = true;
+                _leftIndexObject.transform.position = _leftIndexPose.Position;
+
+                //var test = _leftIndexPose.Position.
+                _leftIndexObject.GetComponent<Renderer>().enabled = true;
 
 
                 //Match the height here. Kinova arm up/down is Z, Unity is Y
-                var z_arm_difference = _leftPalmPose.Position.y - Target_EndEffector.transform.position.y;
-                var y_arm_difference = _leftIndexPose.Position.x - Target_EndEffector.transform.position.x;
-                var x_arm_difference = _leftIndexPose.Position.z - Target_EndEffector.transform.position.z;
+                var z_arm_difference = (_leftPalmPose.Position.y - Target_EndEffectorImage.transform.position.y) + _vertialOffset;
+                var y_arm_difference = _leftIndexPose.Position.x - Target_EndEffectorImage.transform.position.x;
+                var x_arm_difference = _leftIndexPose.Position.z - Target_EndEffectorImage.transform.position.z;
+
+
+                Debug.Log("z difference: " + z_arm_difference + " x difference: " + x_arm_difference);
 
                 if (Mathf.Abs( z_arm_difference) > _distanceThreshold)
                 {
