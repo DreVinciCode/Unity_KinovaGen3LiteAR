@@ -397,7 +397,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &19824026
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &105391034
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3321,7 +3321,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &480334286
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3878,7 +3878,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &547146324
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4193,7 +4193,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &574484273
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6525,7 +6525,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1008976630
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6714,7 +6714,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1027099999
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6917,7 +6917,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1029795647
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7544,7 +7544,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1114543868
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7863,7 +7863,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1184133260
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8066,7 +8066,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1187121060
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8426,7 +8426,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1266816117
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9094,7 +9094,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1349608115
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11367,7 +11367,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1666279985
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12553,7 +12553,7 @@ Transform:
   - {fileID: 19824022}
   - {fileID: 1187121056}
   m_Father: {fileID: 1742734886}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1791161510
 GameObject:
@@ -12713,7 +12713,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1792011033
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13259,7 +13259,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1910063526
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13462,7 +13462,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1913401591
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14038,7 +14038,7 @@ MonoBehaviour:
   onTapUp:
     m_PersistentCalls:
       m_Calls: []
-  eyeCursorSnapToTargetCenter: 0
+  eyeCursorSnapToTargetCenter: 1
 --- !u!135 &1930974822
 SphereCollider:
   m_ObjectHideFlags: 0
