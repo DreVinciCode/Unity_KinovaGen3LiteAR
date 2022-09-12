@@ -1,9 +1,11 @@
 # KinovaAR
 
-![Alt text](Demo/demo.gif)
-<br/> TBD
+![Alt text](Demos/SafetyZoneKinova.gif)
+<br/> Visualizing the working range of the arm
 
-![Alt text](Demo/demo2.gif)
-<br/> A Short Demo of Current Progress
+![Alt text](Demos/currentfuture.gif)
+<br/> Visualizing the current and future arm trajectory 
 
+![Alt text](Demos/handgesturecontrol.gif)
+<br/> Teleop the arms end effector with hand gestures
 
