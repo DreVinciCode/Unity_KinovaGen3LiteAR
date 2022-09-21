@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+export SPOT_URDF_EXTRAS=$(catkin_find spot_kinova_description urdf/spot_gen3_lite_description.urdf.xacro --first-only)

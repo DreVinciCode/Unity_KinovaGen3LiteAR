@@ -28,7 +28,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
         /// </summary>
         public void RotateTarget()
         {
-            transform.eulerAngles = transform.eulerAngles + RotateByEulerAngles * speed;
+            transform.localEulerAngles = transform.localEulerAngles + RotateByEulerAngles * speed;
         }
     }
 }
