@@ -28,13 +28,13 @@ namespace RosSharp.RosBridgeClient
 
         public void CloseGripper()
         {
-            message.data = 0;
+            message.data = 1;
             PublishMessage();
         }
 
         public void OpenGripper()
         {
-            message.data = 1;
+            message.data = 0;
             PublishMessage();
         }
 
