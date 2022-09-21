@@ -14,10 +14,11 @@ namespace RosSharp.RosBridgeClient
         private MessageTypes.Std.Float32 message;
 
         private bool _publishedMessage = true;
+        private bool _activeState = false;
 
         public bool _publishMessageCheck { get; set; }
 
-        private MixedRealityPose _leftThumbPose, _leftIndexPose;
+        private MixedRealityPose _leftThumbPose, _leftIndexPose, _rightThumbPose, _rightIndexPose;
 
         protected override void Start()
         {
@@ -37,7 +38,21 @@ namespace RosSharp.RosBridgeClient
 
         private void FixedUpdate()
         {
-            if(HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Left, out _leftIndexPose) &&
+            //Right hand trigger
+            if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out _rightIndexPose) &&
+                HandJointUtils.TryGetJointPose(TrackedHandJoint.ThumbTip, Handedness.Right, out _rightThumbPose))
+            {
+                if (Vector3.Distance(_rightIndexPose.Position, _rightThumbPose.Position) < 0.02f)
+                    _activeState = true;
+                
+                else
+                    _activeState = false;               
+            }
+            else
+                _activeState = false;
+
+
+            if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Left, out _leftIndexPose) &&
                     HandJointUtils.TryGetJointPose(TrackedHandJoint.ThumbTip, Handedness.Left, out _leftThumbPose))
             {
                 _gripperPosition = Vector3.Distance(_leftIndexPose.Position, _leftThumbPose.Position);
@@ -66,7 +81,7 @@ namespace RosSharp.RosBridgeClient
             else
                 message.data = -1f;
 
-            if (_publishMessageCheck && _publishedMessage)
+            if (_publishMessageCheck && _publishedMessage && _activeState)
             {
                 PublishMessage();
                 _publishedMessage = false;
