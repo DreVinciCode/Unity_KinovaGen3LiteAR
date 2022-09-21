@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace RosSharp.RosBridgeClient
 {
     public class EmergencyStopCommandPublisher : UnityPublisher<MessageTypes.Std.Empty>
     {
-
         private MessageTypes.Std.Empty _EmergencyStopMessage;
 
         protected override void Start()
