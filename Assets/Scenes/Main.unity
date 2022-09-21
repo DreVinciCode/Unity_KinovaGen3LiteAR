@@ -967,7 +967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7661553310284111047, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0596
       objectReference: {fileID: 0}
     - target: {fileID: 7661553310284111047, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3023,6 +3023,14 @@ PrefabInstance:
     - target: {fileID: 5026681468022612530, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026681468022612533, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+      propertyPath: onHandActivate.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026681468022612533, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+      propertyPath: onHandDeactivate.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5499607683777172796, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6758,6 +6766,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4224314501560097846, guid: ad754e26f239f00459530909daf477a8, type: 3}
   m_PrefabInstance: {fileID: 1509883133}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1538444421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4678893387155365669, guid: c1916530bc0f04545aa69996d90ff3a3, type: 3}
+  m_PrefabInstance: {fileID: 179379481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1538444424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538444421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18efdb96523ccd4aa7501e91941796b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1541422959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6937,35 +6962,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1552439524}
-        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.TwistCommandPublisher,
-          Assembly-CSharp
-        m_MethodName: set__publishMessageCheck
-        m_Mode: 6
+      - m_Target: {fileID: 1538444424}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ConnectedColor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1552439527}
-        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.TwistCommandBallGuidePublisher,
-          Assembly-CSharp
-        m_MethodName: set__publishMessageCheck
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   RosConnectionFailed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538444424}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: DisconnectedColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1552439522
 MonoBehaviour:
   m_ObjectHideFlags: 0
