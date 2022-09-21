@@ -107,7 +107,7 @@ MonoBehaviour:
   inputActionRulesProfile: {fileID: 11400000, guid: 03945385d89102f41855bc8f5116b199, type: 2}
   pointerProfile: {fileID: 11400000, guid: fa348bf44b661704fb20e5d975528e84, type: 2}
   gesturesProfile: {fileID: 11400000, guid: bd7829a9b29409045a745b5a18299291, type: 2}
-  speechCommandsProfile: {fileID: 11400000, guid: 0c8a5b59737fff34c9f5e511149e29fb, type: 2}
+  speechCommandsProfile: {fileID: 11400000, guid: 3f7ff992b8299ef47bbdaafeaa466305, type: 2}
   enableControllerMapping: 1
   controllerMappingProfile: {fileID: 11400000, guid: 39ded1fd0711a0c448413d0e1ec4f7f3, type: 2}
   controllerVisualizationProfile: {fileID: 11400000, guid: 345c06fdf3732db46b96299bd3cba653, type: 2}

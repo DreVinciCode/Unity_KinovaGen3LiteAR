@@ -23,6 +23,8 @@ namespace RosSharp.RosBridgeClient
         private float _linearY = 0;
         private float _linearZ = 0;
 
+        private float _maxVelocity = 0.07f;
+
         protected override void Start()
         {
             base.Start();
@@ -83,10 +85,26 @@ namespace RosSharp.RosBridgeClient
                 var y_arm_difference = EyeTarget_Cursor.transform.position.x - EndEffectorPoint.transform.position.x;
                 var x_arm_difference = -(EyeTarget_Cursor.transform.position.z - EndEffectorPoint.transform.position.z);
 
-                _linearZ = z_arm_difference;
-                _linearX = x_arm_difference;
-                _linearY = y_arm_difference;
+                if (z_arm_difference > _maxVelocity)
+                    _linearZ = _maxVelocity;
+                else if (z_arm_difference < -_maxVelocity)
+                    _linearZ = -_maxVelocity;
+                else
+                    _linearZ = z_arm_difference;
 
+                if (y_arm_difference > _maxVelocity)
+                    _linearY = _maxVelocity;
+                else if (y_arm_difference < -_maxVelocity)
+                    _linearY = -_maxVelocity;
+                else
+                    _linearY = y_arm_difference;
+
+                if (x_arm_difference > _maxVelocity)
+                    _linearX = _maxVelocity;
+                else if (x_arm_difference < -_maxVelocity)
+                    _linearX = -_maxVelocity;
+                else
+                    _linearX = x_arm_difference;
 
                 PublishMessage();
             }
