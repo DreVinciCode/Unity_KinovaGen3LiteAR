@@ -91,7 +91,7 @@ namespace RosSharp.RosBridgeClient
             if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out _rightIndexPose) &&
                 HandJointUtils.TryGetJointPose(TrackedHandJoint.ThumbTip, Handedness.Right, out _rightThumbPose))
             {
-                if (Vector3.Distance(_rightIndexPose.Position, _rightThumbPose.Position) < 0.02f)
+                if (Vector3.Distance(_rightIndexPose.Position, _rightThumbPose.Position) < 0.01f)
                 {
                     _activeState = true;
                     Status.text = "Active";
