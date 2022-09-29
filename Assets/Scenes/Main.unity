@@ -5179,6 +5179,14 @@ PrefabInstance:
       propertyPath: onHandDeactivate.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5048976349763348923, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1495681649}
+    - target: {fileID: 5048976349763348923, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ARButtonClicked
+      objectReference: {fileID: 0}
     - target: {fileID: 5499607683777172796, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10127,6 +10135,17 @@ Transform:
   m_Father: {fileID: 137715212}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1495681649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 684439938, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
+  m_PrefabInstance: {fileID: 684439909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2417d99bc2382c4ea0173e6f6a1967a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1504712181
 GameObject:
   m_ObjectHideFlags: 0
