@@ -13,7 +13,7 @@ namespace RosSharp.RosBridgeClient
         public TMP_Text Direction;
 
         public bool _publishMessageCheck { get; set; }
-        public bool _objectDetected { get; set; }
+        //public bool _objectDetected { get; set; }
         public bool x_fixed { get; set; }
         public bool y_fixed { get; set; }
         public bool z_fixed { get; set; }
@@ -91,7 +91,7 @@ namespace RosSharp.RosBridgeClient
             if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out _rightIndexPose) &&
                 HandJointUtils.TryGetJointPose(TrackedHandJoint.ThumbTip, Handedness.Right, out _rightThumbPose))
             {
-                if (Vector3.Distance(_rightIndexPose.Position, _rightThumbPose.Position) < 0.01f)
+                if (Vector3.Distance(_rightIndexPose.Position, _rightThumbPose.Position) < 0.02f)
                 {
                     _activeState = true;
                     Status.text = "Active";
@@ -113,7 +113,7 @@ namespace RosSharp.RosBridgeClient
             //
 
             // If right trigger not detected or target image not detected
-            if (!_activeState || !_objectDetected)
+            if (!_activeState)
             {
                 _linearX = 0;
                 _linearY = 0;

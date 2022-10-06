@@ -5182,7 +5182,7 @@ PrefabInstance:
     - target: {fileID: 5048976349763348923, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1495681649}
+      objectReference: {fileID: 0}
     - target: {fileID: 5048976349763348923, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ARButtonClicked
@@ -8049,6 +8049,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotateByEulerAngles: {x: 0, y: 1, z: 1}
   speed: 1
+--- !u!1 &1147149869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147149870}
+  - component: {fileID: 1147149871}
+  m_Layer: 0
+  m_Name: EndEffector_Marker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147149870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147149869}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.0218, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1183934479}
+  m_Father: {fileID: 1742734886}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147149871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147149869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6843d29ca9062374fa28e1ff5347b9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndEffector_Marker: {fileID: 1183934480}
 --- !u!1 &1168958059
 GameObject:
   m_ObjectHideFlags: 0
@@ -8150,6 +8195,73 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5688524241609396942, guid: 8e5656c5a5412ba4f8af4d539ec4c34b, type: 3}
   m_PrefabInstance: {fileID: 1176053180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1183934478
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1147149870}
+    m_Modifications:
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784724737489629378, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+      propertyPath: m_Name
+      value: EndEffector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+--- !u!4 &1183934479 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7783165330676624448, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+  m_PrefabInstance: {fileID: 1183934478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1183934480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7784724737489629378, guid: 206f76aa57a4ba041a9f93bdc10cb272, type: 3}
+  m_PrefabInstance: {fileID: 1183934478}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1184133255
 GameObject:
@@ -9382,6 +9494,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1552439532}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552439532}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.UnitySubscriber`1[[RosSharp.RosBridgeClient.MessageTypes.Geometry.Twist,
+          RosBridgeClient
+        m_MethodName: SubscribeStatus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1349608110
 GameObject:
   m_ObjectHideFlags: 0
@@ -10135,17 +10272,6 @@ Transform:
   m_Father: {fileID: 137715212}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1495681649 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 684439938, guid: 2fb3d43a3f35cb64499c26e6dc6caab5, type: 3}
-  m_PrefabInstance: {fileID: 684439909}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2417d99bc2382c4ea0173e6f6a1967a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1504712181
 GameObject:
   m_ObjectHideFlags: 0
@@ -10818,6 +10944,7 @@ GameObject:
   - component: {fileID: 1552439529}
   - component: {fileID: 1552439530}
   - component: {fileID: 1552439531}
+  - component: {fileID: 1552439532}
   m_Layer: 0
   m_Name: RosConnector
   m_TagString: Untagged
@@ -11084,7 +11211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /my_gen3_lite/in/cartesian_velocity_mod
   LeftHandIndexMarker: {fileID: 2098532061995269956, guid: b0b875095297ea440bbc247557910b79, type: 3}
-  Target_EndEffectorImage: {fileID: 259631842}
+  Target_EndEffectorImage: {fileID: 1183934480}
   Status: {fileID: 1066579701}
   Direction: {fileID: 1666340329}
 --- !u!114 &1552439530
@@ -11117,6 +11244,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /KinovaAR/gripper_cmd/goal_mod
+--- !u!114 &1552439532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552439518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338dcdd78272d3e4ca0256f9db782ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /my_gen3_lite/end_effector_pose
+  TimeStep: 0
+  endEffectorPublisher: {fileID: 1147149871}
 --- !u!1 &1555958931
 GameObject:
   m_ObjectHideFlags: 0
@@ -12566,6 +12708,7 @@ Transform:
   - {fileID: 165668854}
   - {fileID: 1654782914}
   - {fileID: 1771584834}
+  - {fileID: 1147149870}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
