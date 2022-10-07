@@ -8,7 +8,10 @@ namespace RosSharp.RosBridgeClient
     public class HandMirrorPublisher : UnityPublisher<MessageTypes.Geometry.Twist>
     {
         public GameObject LeftHandIndexMarker;
-        public GameObject Target_EndEffectorImage;
+        public GameObject LeftHandThumbMarker;
+        public GameObject LeftHandWristMarker;
+        public GameObject LeftHandIndexKnukleMarker;
+        public GameObject Target_EndEffector;
         public TMP_Text Status;
         public TMP_Text Direction;
 
@@ -17,12 +20,18 @@ namespace RosSharp.RosBridgeClient
         public bool x_fixed { get; set; }
         public bool y_fixed { get; set; }
         public bool z_fixed { get; set; }
-
+        public bool x_rot_fixed { get; set; }
+        public bool y_rot_fixed { get; set; }
+        public bool z_rot_fixed { get; set; }
 
         private MessageTypes.Geometry.Twist message;
         private float _linearX = 0;
         private float _linearY = 0;
         private float _linearZ = 0;
+        private float _angularX = 0;
+        private float _angularY = 0;
+        private float _angularZ = 0;
+
         private float _distanceThreshold = 0.01f;
         private float _forwardSeparation = 0.2f;
         private float _vertialOffset = 0.1872f;
@@ -38,10 +47,15 @@ namespace RosSharp.RosBridgeClient
         private bool _stopChecked = false;
         private bool _sendZeros = true;
 
-        private MixedRealityPose _leftThumbPose, _leftPalmPose, _leftIndexPose, _leftMiddlePose, _rightThumbPose, _rightIndexPose;
+        private float _rotationFactor = 2f;
+
+
+        private MixedRealityPose _leftThumbPose, _leftPalmPose, _leftIndexPose, _leftIndexKnuklePose, _leftWristPose, _rightThumbPose, _rightIndexPose, _rightPalmPose;
 
         GameObject _leftIndexObject;
-
+        GameObject _leftThumbObject;
+        GameObject _leftWristObject;
+        GameObject _leftIndexKnukleObject;
 
         protected override void Start()
         {
@@ -49,6 +63,9 @@ namespace RosSharp.RosBridgeClient
             InitializeMessage();
             Status.text = "Inactive";
             _leftIndexObject = Instantiate(LeftHandIndexMarker, Camera.main.transform);
+            _leftThumbObject = Instantiate(LeftHandThumbMarker, Camera.main.transform);
+            _leftWristObject = Instantiate(LeftHandWristMarker, Camera.main.transform);
+            _leftIndexKnukleObject = Instantiate(LeftHandIndexKnukleMarker, Camera.main.transform);
         }
 
         private void InitializeMessage()
@@ -67,8 +84,17 @@ namespace RosSharp.RosBridgeClient
             if (!z_fixed)
                 _linearZ = 0;
 
+            if (!x_rot_fixed)
+                _angularX = 0;
+
+            if (!y_rot_fixed)
+                _angularY = 0;
+
+            if (!z_rot_fixed)
+                _angularZ = 0;
+
             Vector3 linearVelocity = new Vector3(_linearX, _linearY, _linearZ);
-            Vector3 angularVelocity = new Vector3(0f, 0f, 0f);
+            Vector3 angularVelocity = new Vector3(_angularX, _angularY, _angularZ);
 
             message.linear = GetGeometryVector3(linearVelocity);
             message.angular = GetGeometryVector3(angularVelocity);
@@ -118,6 +144,9 @@ namespace RosSharp.RosBridgeClient
                 _linearX = 0;
                 _linearY = 0;
                 _linearZ = 0;
+                _angularX = 0;
+                _angularY = 0;
+                _angularZ = 0;
                 PublishMessage();
                 return;
             }
@@ -135,24 +164,36 @@ namespace RosSharp.RosBridgeClient
 
             if (HandJointUtils.TryGetJointPose(TrackedHandJoint.Palm, Handedness.Left, out _leftPalmPose) &&
                 HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Left, out _leftIndexPose) &&
-                HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out _rightIndexPose))
+                HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out _rightIndexPose) &&
+                HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexKnuckle, Handedness.Left, out _leftIndexKnuklePose) &&
+                HandJointUtils.TryGetJointPose(TrackedHandJoint.Wrist, Handedness.Left, out _leftWristPose) &&
+                HandJointUtils.TryGetJointPose(TrackedHandJoint.Palm, Handedness.Right, out _rightPalmPose))
             {
                 _leftIndexObject.transform.position = _leftIndexPose.Position;
                 _leftIndexObject.GetComponent<Renderer>().enabled = true;
 
+                _leftThumbObject.transform.position = _leftThumbPose.Position;
+                _leftWristObject.transform.position = _leftWristPose.Position;
+                _leftIndexKnukleObject.transform.position = _leftIndexKnuklePose.Position;
+
                 //Match the height here. Kinova arm up/down is Z, Unity is Y
-                var z_arm_difference = (_leftPalmPose.Position.y - Target_EndEffectorImage.transform.position.y) + _vertialOffset;
-                var y_arm_difference = _leftIndexPose.Position.x - Target_EndEffectorImage.transform.position.x;                   
-                //var x_arm_difference = (_leftIndexPose.Position.z - Target_EndEffectorImage.transform.position.z) - _forwardSeparation;
+                var z_arm_difference = (_leftPalmPose.Position.y - Target_EndEffector.transform.position.y) + _vertialOffset;
+                var y_arm_difference = _leftIndexPose.Position.x - Target_EndEffector.transform.position.x;                   
                 var x_arm_difference = -(_leftIndexPose.Position.z - _rightIndexPose.Position.z);
 
-                if (Mathf.Abs( z_arm_difference) > _distanceThreshold)
-                {
-                    _linearZ = z_arm_difference;
-                    _linearX = x_arm_difference;
-                    _linearY = y_arm_difference;
-                    Direction.text = (Mathf.Round((z_arm_difference) * 100f) / 100f).ToString();
-                }
+                var x_rotation = -(_leftWristObject.transform.localPosition.z - _leftIndexKnukleObject.transform.localPosition.z) * _rotationFactor;
+
+                var y_rotation = -(_leftWristObject.transform.localPosition.x - _leftIndexKnukleObject.transform.localPosition.x) * _rotationFactor;
+
+                var z_rotation = _leftThumbObject.transform.localPosition.x - _leftWristObject.transform.localPosition.x * _rotationFactor;
+
+                _linearZ = z_arm_difference;
+                _linearX = x_arm_difference;
+                _linearY = y_arm_difference;
+                _angularX = x_rotation;
+                _angularY = y_rotation;
+                _angularZ = z_rotation;
+            
 
                 PublishMessage();
             }
@@ -161,6 +202,10 @@ namespace RosSharp.RosBridgeClient
                 _linearX = 0;
                 _linearY = 0;
                 _linearZ = 0;
+                _angularX = 0;
+                _angularY = 0;
+                _angularZ = 0;
+
                 PublishMessage();
                 return;
             }

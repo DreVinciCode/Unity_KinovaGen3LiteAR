@@ -11,7 +11,7 @@ namespace RosSharp.RosBridgeClient
         public TMP_Text Direction;
 
         public bool _publishMessageCheck { get; set; }
-        public bool _objectDetected { get; set; }
+        //public bool _objectDetected { get; set; }
         public bool _activeDwell { get; set; }
         public bool _activeState { get; set; }
         public bool x_fixed { get; set; }
@@ -61,7 +61,7 @@ namespace RosSharp.RosBridgeClient
 
         private void Update()
         {
-            if (!_activeState || !_objectDetected)
+            if (!_activeState)
             {
                 _linearX = 0;
                 _linearY = 0;
@@ -125,11 +125,6 @@ namespace RosSharp.RosBridgeClient
             geometryVector3.y = vector3.y;
             geometryVector3.z = vector3.z;
             return geometryVector3;
-        }
-
-        public void Test()
-        {
-            Debug.Log("TEst");
         }
     }
 }
