@@ -27,7 +27,7 @@ namespace RosSharp.RosBridgeClient
 
         private void ProcessMessage()
         {
-            Debug.Log("Joint names: " + _joint_names);
+            //Debug.Log("Joint names: " + _joint_names);
             isMessageReceived = false;
 
         }
