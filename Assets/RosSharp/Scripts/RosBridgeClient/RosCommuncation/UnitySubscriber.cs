@@ -61,7 +61,7 @@ namespace RosSharp.RosBridgeClient
             }
 
 
-            rosConnector.RosSocket.Subscribe<T>(Topic, ReceiveMessage, (int)(TimeStep * 100)); // the rate(in ms in between messages) at which to throttle the topics
+            //rosConnector.RosSocket.Subscribe<T>(Topic, ReceiveMessage, (int)(TimeStep * 100)); // the rate(in ms in between messages) at which to throttle the topics
         }
 
         private void UnSubscribe()

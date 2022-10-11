@@ -185,7 +185,7 @@ namespace RosSharp.RosBridgeClient
 
                 var y_rotation = -(_leftWristObject.transform.localPosition.x - _leftIndexKnukleObject.transform.localPosition.x) * _rotationFactor;
 
-                var z_rotation = _leftThumbObject.transform.localPosition.x - _leftWristObject.transform.localPosition.x * _rotationFactor;
+                var z_rotation = (_leftThumbObject.transform.localPosition.x - _leftWristObject.transform.localPosition.x) * _rotationFactor;
 
                 _linearZ = z_arm_difference;
                 _linearX = x_arm_difference;

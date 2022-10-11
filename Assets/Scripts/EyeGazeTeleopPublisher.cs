@@ -47,7 +47,7 @@ namespace RosSharp.RosBridgeClient
             if (!z_fixed)
                 _linearZ = 0;
 
-            Direction.text = "x : " + (Mathf.Round((_linearX) * 100f) / 100f).ToString() + " \ny: " + (Mathf.Round((_linearY) * 100f) / 100f).ToString() + "\nz: " + (Mathf.Round((_linearZ) * 100f) / 100f).ToString();
+            //Direction.text = "x : " + (Mathf.Round((_linearX) * 100f) / 100f).ToString() + " \ny: " + (Mathf.Round((_linearY) * 100f) / 100f).ToString() + "\nz: " + (Mathf.Round((_linearZ) * 100f) / 100f).ToString();
 
             Vector3 linearVelocity = new Vector3(_linearX, _linearY, _linearZ);
             Vector3 angularVelocity = new Vector3(0f, 0f, 0f);
@@ -77,7 +77,6 @@ namespace RosSharp.RosBridgeClient
             {
                 Status.text = "Inactive";
             }
-
 
             if (_activeState && _activeDwell)
             {
