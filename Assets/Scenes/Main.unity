@@ -10424,6 +10424,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - keyword: Execute Trajectory
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1552439534}
+          m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.TrajectoryExecuteKinovaARPublisher,
+            Assembly-CSharp
+          m_MethodName: ExecuteTrajectory
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   persistentKeywords: 0
   speechConfirmationTooltipPrefab: {fileID: 8046114618238072051, guid: 271778f6c957b524981067a81d238394, type: 3}
 --- !u!4 &766089940
@@ -13987,6 +14004,31 @@ MonoBehaviour:
       - m_Target: {fileID: 766089938}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552439534}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552439534}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.TrajectoryExecuteKinovaARPublisher,
+          Assembly-CSharp
+        m_MethodName: set__publishMessageCheck
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20048,6 +20090,7 @@ GameObject:
   - component: {fileID: 1552439531}
   - component: {fileID: 1552439532}
   - component: {fileID: 1552439533}
+  - component: {fileID: 1552439534}
   m_Layer: 0
   m_Name: RosConnector
   m_TagString: Untagged
@@ -20378,6 +20421,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /KinovaAR/Pose
+--- !u!114 &1552439534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552439518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48a154c88f409e4097357148fb84798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /KinovaAR/execute_action
 --- !u!1 &1555958931
 GameObject:
   m_ObjectHideFlags: 0
