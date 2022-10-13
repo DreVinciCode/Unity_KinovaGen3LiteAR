@@ -11,7 +11,7 @@ namespace RosSharp.RosBridgeClient
         public TMP_Text Direction;
 
         public bool _publishMessageCheck { get; set; }
-        public bool _objectDetected { get; set; }
+        //public bool _objectDetected { get; set; }
         public bool _activeDwell { get; set; }
         public bool _activeState { get; set; }
         public bool x_fixed { get; set; }
@@ -47,7 +47,7 @@ namespace RosSharp.RosBridgeClient
             if (!z_fixed)
                 _linearZ = 0;
 
-            Direction.text = "x : " + (Mathf.Round((_linearX) * 100f) / 100f).ToString() + " \ny: " + (Mathf.Round((_linearY) * 100f) / 100f).ToString() + "\nz: " + (Mathf.Round((_linearZ) * 100f) / 100f).ToString();
+            //Direction.text = "x : " + (Mathf.Round((_linearX) * 100f) / 100f).ToString() + " \ny: " + (Mathf.Round((_linearY) * 100f) / 100f).ToString() + "\nz: " + (Mathf.Round((_linearZ) * 100f) / 100f).ToString();
 
             Vector3 linearVelocity = new Vector3(_linearX, _linearY, _linearZ);
             Vector3 angularVelocity = new Vector3(0f, 0f, 0f);
@@ -61,7 +61,7 @@ namespace RosSharp.RosBridgeClient
 
         private void Update()
         {
-            if (!_activeState || !_objectDetected)
+            if (!_activeState)
             {
                 _linearX = 0;
                 _linearY = 0;
@@ -77,7 +77,6 @@ namespace RosSharp.RosBridgeClient
             {
                 Status.text = "Inactive";
             }
-
 
             if (_activeState && _activeDwell)
             {
@@ -125,11 +124,6 @@ namespace RosSharp.RosBridgeClient
             geometryVector3.y = vector3.y;
             geometryVector3.z = vector3.z;
             return geometryVector3;
-        }
-
-        public void Test()
-        {
-            Debug.Log("TEst");
         }
     }
 }

@@ -28,7 +28,6 @@ namespace RosSharp.RosBridgeClient
 
         public bool ConnectionStatus { get; set; }
 
-
         public RosSocket RosSocket { get; private set; }
         public RosSocket.SerializerEnum Serializer;
         public Protocol protocol;

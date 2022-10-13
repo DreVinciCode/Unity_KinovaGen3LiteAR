@@ -58,3 +58,31 @@ MonoBehaviour:
       id: 0
       description: Toggle Diagnostics
       axisConstraint: 0
+  - localizationKey: 
+    keyword: Retract
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Diagnostics
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Home Position
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Diagnostics
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Package Position
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Diagnostics
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Execute Trajectory
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Diagnostics
+      axisConstraint: 0
