@@ -7,9 +7,11 @@ namespace RosSharp.RosBridgeClient
     public class EndEffectorPublisher : MonoBehaviour
     {
         public GameObject EndEffector_Marker;
+        public GameObject TargetPoseObject;
 
         private bool isMessageReceived;
         private MessageTypes.Geometry.Twist _message;
+        private MessageTypes.Geometry.Pose _pose;
 
         private float _linearX;
         private float _linearY;
@@ -17,6 +19,7 @@ namespace RosSharp.RosBridgeClient
         private float _angularX;
         private float _angularY;
         private float _angularZ;
+        private Vector3 _offset = new Vector3(0, 0f, 0);
 
         public void Write(MessageTypes.Geometry.Twist message)
         {
@@ -46,10 +49,18 @@ namespace RosSharp.RosBridgeClient
             pose.orientation.z = orientation.z;
             pose.orientation.w = orientation.w;
 
+            _pose = pose;
+
             EndEffector_Marker.transform.localPosition = GetPosition(pose).Ros2Unity();
             EndEffector_Marker.transform.rotation = GetRotation(pose).Ros2Unity();
 
             isMessageReceived = false;
+        }
+
+        public void ResetTargetPoseObject()
+        {
+            TargetPoseObject.transform.localPosition = GetPosition(_pose).Ros2Unity() + _offset;
+            TargetPoseObject.transform.localRotation = GetRotation(_pose).Ros2Unity();
         }
 
         private void Update()
