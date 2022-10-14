@@ -4,7 +4,7 @@ Welcome to project KinovaAR! (Figuring out a better name still)
 In this project, I am communicating robotic arm information to an augmented reality device and visualize that information to improve human-robot collaborative tasks. Users can provide input information to update the robot's motion plan, perceptions, and contraints with mixed-reality.
 
 Features in this project:
-- Voice commands to execute planned trajectories.
+- Voice command recognition to execute planned trajectories.
 - Eye gaze control to teleop robot end effector to target areas.
 - Hand Gesture control to telop robot end effector to mirror user's hand location and pinch gesture to control robotic gripper.
 - Visualizing current and future planned robotic joint states.
@@ -15,7 +15,7 @@ Features in this project:
 Future items to implement in this project include:
 - Enable users to add and control boundary zones to constrain the arm to a specified working area.
 - Visualizing force/torque sensors 
-- 
+- External color/depth camera for object detection
 
 This project is tied to its ROS component linked here, [ROS_KinovaGen3LiteAR](https://github.com/DreVinciCode/ROS_KinovaGen3LiteAR)
 
