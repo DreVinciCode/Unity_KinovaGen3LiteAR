@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="Scaled_Merge_Cube.Front" size="0.070000 0.069725"/>
+        <ImageTarget name="Scaled_Merge_Cube.Right" size="0.070000 0.070000"/>
+        <ImageTarget name="Scaled_Merge_Cube.Bottom" size="0.070000 0.069725"/>
+        <ImageTarget name="Scaled_Merge_Cube.Top" size="0.070000 0.069724"/>
+        <ImageTarget name="Scaled_Merge_Cube.Left" size="0.070000 0.069861"/>
+        <ImageTarget name="Scaled_Merge_Cube.Back" size="0.070000 0.070000"/>
+        <MultiTarget name="Scaled_Merge_Cube">
+            <Part name="Scaled_Merge_Cube.Left" translation="-0.03500000014901161 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="Scaled_Merge_Cube.Right" translation="0.03500000014901161 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="Scaled_Merge_Cube.Front" translation="0 0 0.03500000014901161" rotation="AD: 1 0 0 0"/>
+            <Part name="Scaled_Merge_Cube.Back" translation="0 0 -0.03500000014901161" rotation="AD: 0 1 0 180"/>
+            <Part name="Scaled_Merge_Cube.Top" translation="0 0.03500000014901161 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="Scaled_Merge_Cube.Bottom" translation="0 -0.03500000014901161 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>
