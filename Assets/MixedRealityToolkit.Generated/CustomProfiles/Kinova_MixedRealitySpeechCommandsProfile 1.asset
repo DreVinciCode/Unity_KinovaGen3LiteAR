@@ -80,7 +80,14 @@ MonoBehaviour:
       description: Toggle Diagnostics
       axisConstraint: 0
   - localizationKey: 
-    keyword: Execute Trajectory
+    keyword: Execute
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Diagnostics
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Play
     keyCode: 0
     action:
       id: 0

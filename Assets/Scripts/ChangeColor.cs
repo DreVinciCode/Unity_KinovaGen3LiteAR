@@ -22,4 +22,6 @@ public class ChangeColor : MonoBehaviour
     {
         _spriteRenderer.color = Color.red;
     }
+
+
 }
