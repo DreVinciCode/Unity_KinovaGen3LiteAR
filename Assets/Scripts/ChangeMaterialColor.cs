@@ -24,6 +24,12 @@ public class ChangeMaterialColor : MonoBehaviour
         MeshRenderer.material.color = Color.red;
     }
 
+    public void ResultPlannerColor()
+    {
+        Debug.Log("Invalid");
+        MeshRenderer.material.color = Color.magenta;
+    }
+
     public void CheckforInBounds()
     {
         if(MeshRenderer.material.color == Color.red)
