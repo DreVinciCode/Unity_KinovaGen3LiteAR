@@ -3173,6 +3173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 137715212}
   - component: {fileID: 137715213}
+  - component: {fileID: 137715214}
   m_Layer: 0
   m_Name: 'gen3_lite_gen3_lite_2f_Future '
   m_TagString: Untagged
@@ -3222,6 +3223,34 @@ MonoBehaviour:
   Wrist_1_Offset_Position: 0
   Wrist_2_Offset_Position: 0
   Wrist_3_Offset_Position: 0
+  Right_Bottom_Finger_Offset_Position: 0
+  Left_Bottom_Finger_Offset_Position: 0
+--- !u!114 &137715214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137715211}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e03974cb8a74b4bb775e52da40c760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Joint_1: {fileID: 187444258}
+  Joint_2: {fileID: 569350488}
+  Joint_3: {fileID: 2056849092}
+  Joint_4: {fileID: 1412736515}
+  Joint_5: {fileID: 215256463}
+  Joint_6: {fileID: 58752574}
+  Right_Bottom_Finger: {fileID: 1271021531}
+  Left_Bottom_Finger: {fileID: 256899026}
+  Joint_1_Offset_Position: 0
+  Joint_2_Offset_Position: 0
+  Joint_3_Offset_Position: 0
+  Joint_4_Offset_Position: 0
+  Joint_5_Offset_Position: 0
+  Joint_6_Offset_Position: 0
   Right_Bottom_Finger_Offset_Position: 0
   Left_Bottom_Finger_Offset_Position: 0
 --- !u!1 &149920730
@@ -27367,9 +27396,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MeshRenderer: {fileID: 23463223642959310}
-  FailedMaterial: {fileID: 2100000, guid: 880b1bf7a3a24764fa7792c496bb0bcf, type: 2}
-  InitialMaterial: {fileID: 2100000, guid: da6b4021ebe129049a47ff1e5094fb99, type: 2}
-  BasicTexture: {fileID: 2800000, guid: 4dc2af512aa3370419ccd40d0abd485b, type: 3}
 --- !u!114 &1329004076855074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28266,7 +28292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5924944007596871593, guid: da8793ac4fb4fee4d9ef7103481d39ec, type: 3}
       propertyPath: onManipulationEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: EndManipulationColor
       objectReference: {fileID: 0}
     - target: {fileID: 5924944007596871593, guid: da8793ac4fb4fee4d9ef7103481d39ec, type: 3}
       propertyPath: onManipulationEnded.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
