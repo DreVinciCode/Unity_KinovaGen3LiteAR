@@ -30,7 +30,8 @@ Hardware in this project:
 - Hololens 2 https://www.microsoft.com/en-us/hololens/hardware
 
 
-
+## Links
+[Video Description](https://tufts.box.com/s/y2gx2r3261boq6xjpdam7sukgjzlorau)
 
 ## Demos
 
