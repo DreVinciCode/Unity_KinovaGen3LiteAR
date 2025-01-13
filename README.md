@@ -1,7 +1,6 @@
 # KinovaAR
 
-Welcome to project KinovaAR! (Figuring out a better name still) 
-In this project, I am communicating robotic arm information to an augmented reality device and visualize that information to improve human-robot collaborative tasks. Users can provide input information to update the robot's motion plan, perceptions, and contraints with mixed-reality.
+Welcome to Project KinovaAR (name still in progress)! This project focuses on transmitting robotic arm data to an augmented reality device, enabling the visualization of this information to enhance human-robot collaboration. Users can interact with the system to update the robot's motion plans, perceptions, and constraints through mixed-reality interfaces.
 
 ## Be sure to inlcude Vuforia Package 'com.ptc.vuforia.engine-10.8.4.tgz' before opening the Project.
 The 'com.ptc.vuforia.engine-10.8.4.tgz' package was too large to push through Github so I excluded it from the project. Download this package and include it in the Packages folder, then open the project. 
